@@ -25,6 +25,7 @@ class App extends React.Component {
   }
   render() {
     const {friends}=this.state
+  
     return (
       <div className="App">
         <nav>
