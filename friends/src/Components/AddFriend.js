@@ -11,10 +11,12 @@ class AddFriend extends React.Component{
     render() {
         return (
             <form>
-                <h1>Add New Friend</h1>
+                <h1>Add a Friend</h1>
                 <input type="text" name="name" placeholder="Name" value={this.state.name} onChange={false} />
                 <button type="submit"> +1UP </button>
             </form>
         )
     }
 }
+
+export default AddFriend

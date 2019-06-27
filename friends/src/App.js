@@ -2,9 +2,10 @@ import React from 'react'
 import ReactDOM from "react-dom"
 import {Route, Link} from "react-router-dom"
 import axios from "axios"
-import './App.css'
 import FriendsList from './Components/FriendsList'
 import AddFriend from "./Components/AddFriend"
+import './App.css'
+
 class App extends React.Component {
 	state = {
 		friends: []
@@ -28,10 +29,11 @@ class App extends React.Component {
       <div className="App">
         <nav>
           <h1>Friends</h1>
+          <Link to="/newfriend">Add New Friend</Link>
         </nav>
         <FriendsList friends={friends} />
         {console.log( `${friends}` )}
-        <Route/>
+        <Route exact path="/newfriend" render={( props ) => <AddFriend {...props} friends={friends}/>}/>
       </div>
       );
     }
