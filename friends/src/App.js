@@ -1,7 +1,7 @@
-import React from 'react';
-import axios from "axios";
-import './App.css';
-import FriendsList from './Components/FriendsList';
+import React from 'react'
+import axios from "axios"
+import './App.css'
+import FriendsList from './Components/FriendsList'
 class App extends React.Component {
 	state = {
 		friends: []
@@ -9,19 +9,18 @@ class App extends React.Component {
   componentDidMount() {
 		axios.get('http://localhost:5000/friends/' )
 		.then(response => {
-      this.setState( {friends: response.data})
+      this.setState( {
+        friends: response.data
+      } )
+      console.log(this.state.friends)
 		} )
-			.then( () => axios.get( 'http://localhost:5000/friends/' ) )
-			.then( response => {
-				console.log(response.data)
-			})
 			.catch( err => {
 			console.log('Error:', err)
 		})
 	
   }
   render() {
-    const {friends}=this.state;
+    const {friends}=this.state
     return (
       <div className="App">
         <nav>
