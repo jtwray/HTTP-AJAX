@@ -1,7 +1,10 @@
 import React from 'react'
+import ReactDOM from "react-dom"
+import {Route, Link} from "react-router-dom"
 import axios from "axios"
 import './App.css'
 import FriendsList from './Components/FriendsList'
+import AddFriend from "./Components/AddFriend"
 class App extends React.Component {
 	state = {
 		friends: []
@@ -28,6 +31,7 @@ class App extends React.Component {
         </nav>
         <FriendsList friends={friends} />
         {console.log( `${friends}` )}
+        <Route/>
       </div>
       );
     }
